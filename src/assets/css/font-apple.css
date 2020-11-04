@@ -1,0 +1,7 @@
+@font-face{
+    font-family: Apple;
+    src: url(../fonts/Apple/SF-Pro-Display-Black.otf);
+}
+p{
+    font-family: Apple;
+}

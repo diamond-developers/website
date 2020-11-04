@@ -1,0 +1,29 @@
+.fade {
+    margin: 50px;
+    padding: 50px;
+    background-color: lightgreen;
+    opacity: 1;
+  }
+  .left{
+      text-align: left;
+      float: left;
+  }
+ hr.lol{
+     color: black;
+     height: 1000px;
+ }
+ .right{
+    text-align: right;
+    float: right;
+}
+.mainboxd{
+    width: 320px;
+      padding: 10px;
+      border: .001px solid rgb(255, 255, 255);
+      margin: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 15px;
+      text-align: center;
+  }
