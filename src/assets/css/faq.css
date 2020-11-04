@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Baloo;
+    src: url(../fonts/BalooTammudu2-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Quick;
+    src: url(../fonts/Quicksand-Medium.ttf)
+}
+h1,h2,h3,h4,h5{
+    font-family: Baloo;
+    color: #ffff;
+}
+p {
+    font-family: Quick;
+    color: #ffff;
+}
+.center{
+    text-align: center;
+    float: inherit;
+}
+.box {
+    width: 1080px;
+    padding: 10px;
+    border: .009px solid gray;
+    margin: 0;
+    border-radius: 20px;
+    float: left;
+  }
+a {
+    color: #ffff;
+}
+body {
+    background-color: #2C2F33;
+}
+hr {
+    color: rgba(255, 255, 255, 0.534);
+    border-radius: 20px;
+}
+.sides {
+    float: right;
+    text-align: center;
+}
+.side-box {
+    width: 300px;
+    padding: 10px;
+    border: .009px solid gray;
+    margin: 0;
+    border-radius: 10px;
+  }
+.comment-box {
+    width: 530px;
+    padding: 1px;
+    border: .009px solid gray;
+    margin: 0;
+    float: left;
+  }
+form {
+    background-color: #2C2F33;
+}

@@ -1,0 +1,1665 @@
+/*
+        Copyright 2020 The Musical Founders
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+
+    Owned and operated by ION Staff and The dev team
+*/
+
+/*FONTS*/
+@font-face{
+  font-family: Baloo;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Main/BalooTammudu2-ExtraBold.ttf);
+}
+@font-face{
+  font-family: Quick;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Main/Quicksand-Medium.ttf);
+}
+@font-face{
+  font-family: Roboto-Thin;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Thin.ttf)
+}
+@font-face{
+  font-family: Roboto-thin-italic;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-ThinItalic.ttf);
+}
+@font-face{
+  font-family: Roboto-Normal;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face{
+  font-family:Roboto-Normal-Italic;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-MediumItalic.ttf);
+}
+@font-face{
+  font-family:Roboto-Medium;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+@font-face{
+  font-family:Roboto-Light;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+@font-face{
+  font-family: Roboto-Light-Italic;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-LightItalic.ttf);
+}
+@font-face{
+  font-family: Roboto-Black;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Black.ttf);
+}
+@font-face{
+  font-family: Roboto-Black-Italic;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-BlackItalic.ttf);
+}
+@font-face{
+  font-family: Roboto-Bold;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-Bold.ttf);
+}
+@font-face{
+  font-family: Roboto-Bold-Italic;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+  src: url(../fonts/Roboto/Roboto-BoldItalic.ttf);
+}
+@font-face{
+font-family: Apple;
+src: url(../fonts/Apple/SF-Pro-Display-Black.otf) format(otf);
+}
+/*
+title
+*/
+*{
+margin: 0;
+padding: 0;
+}
+
+.loading-screen{
+width: 100%;
+height: 100vh;
+background-color: #2e2e2e;
+position: fixed;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.loading{
+width: 80px;
+display: flex;
+flex-wrap: wrap;
+animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate{
+to{
+    transform: rotate(360deg);
+}
+}
+
+.loading span{
+width: 32px;
+height: 32px;
+background-color: red;
+margin: 4px;
+animation: scale 1.5s linear infinite;
+}
+
+@keyframes scale{
+50%{
+    transform: scale(1.2);
+}
+}
+
+.loading span:nth-child(1){
+border-radius: 50% 50% 0 50%;
+background-color: #e77f67;
+transform-origin: bottom right;
+}
+
+.loading span:nth-child(2){
+border-radius: 50% 50% 50% 0;
+background-color: #778beb;
+transform-origin: bottom left;
+animation-delay: .5s;
+}
+
+.loading span:nth-child(3){
+border-radius: 50% 0 50% 50%;
+background-color: #f8a5c2;
+transform-origin: top right;
+animation-delay: 1.5s;
+}
+
+.loading span:nth-child(4){
+border-radius: 0 50% 50% 50%;
+background-color: #f5cd79;
+transform-origin: top left;
+animation-delay: 1s;
+}
+
+
+
+#home .content h1::after{
+content: "Spextr";
+animation: textanim 10s linear infinite;
+}
+
+@keyframes textanim{
+25%{
+  content: "Your Discord Bot";
+}
+50%{
+  content: "The best music bot";
+}
+75%{
+  content: "Musical";
+}
+}
+/*
+  Add fonts to elements. this is going to be a long one...
+*/
+h1,h2,h3,h4,h5,h6{
+  font-family: Baloo;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+p,a,article,i,em{
+  font-family: Quick;
+  font-style: normal;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h1i{
+  font-family: Baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h1b{
+  font-family: Baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h1ib{
+  font-family: Baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h2i{
+  font-family: Baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h2b{
+  font-family: Baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h2ib{
+  font-family: Baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h3i{
+  font-family: Baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h3b{
+  font-family: baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h3bi{
+  font-family: baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h4i{
+  font-family: baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h4b{
+  font-family: baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h4bi{
+  font-family: baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h5i{
+  font-family: baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h5b{
+  font-family: baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h5bi{
+  font-family: baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h6i{
+  font-family: baloo;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h6b{
+  font-family: baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h6bi{
+  font-family: baloo;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+/*
+  Roboto Header
+*/
+.rh1i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh1b{
+  font-family: Roboto;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh1ib{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh2i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh2b{
+  font-family: Roboto;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh2ib{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh3i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh3b{
+  font-family: Roboto;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh3bi{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh4i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh4b{
+  font-family: Roboto;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh4bi{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh5i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh5b{
+  font-family: Roboto;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh5bi{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh6i{
+  font-family: Roboto;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.rh6b{
+  font-family: baloo;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.h6bi{
+  font-family: Roboto;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+/*
+  Ened Roboto
+*/
+
+.pi{
+  font-family: quick;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.pb{
+  font-family: quick;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.pbi{
+  font-family: quick;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.ai{
+  font-family: quick;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.ab{
+  font-family: quick;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.abi{
+  font-family: quick;
+  font-style: italic,bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.ib{
+  font-family: quick;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.bi{
+  font-family: quick;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.emi{
+  font-family: quick;
+  font-style: italic;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+.emb{
+  font-family: quick;
+  font-style: bold;
+  float: inherit;
+  position: inherit;
+  font-size: inherit;
+}
+/*
+  Elements for body
+*/
+body {
+  padding-top: 65px;
+  padding: 25px;
+  background-color: rgb(56, 53, 53);
+  color: white;
+  font-size: 25px;
+}
+
+.center{
+  float: center;
+  text-align: center;
+  position: center;
+}
+.center-box{
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  float: center;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+/*
+LINE 500!
+BUILD Cookie Notification
+*/
+/* PAGE STYLES */
+:root { font-size: 16px; }
+* { box-sizing: border-box; }
+html {
+font-family: 'Montserrat', sans-serif;
+}
+.pin-title {
+position: fixed;
+top: 1.875rem;
+bottom: 1.875rem;
+left: 0;
+right: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Exo', sans-serif;
+font-weight: 800;
+font-size: 800%;
+letter-spacing: 0.0625rem;
+color: #f3f3f3;
+user-select: none;
+z-index: -1;
+text-align: center;
+}
+
+
+/* COOKIE POPUP STYLES */
+
+.cookie-popup {
+
+font-size: 0.875rem;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+position: fixed;
+bottom: -6.25rem;
+left: 1.25rem;
+right: 1.25rem;
+padding: 0.625rem 0.9375rem;
+box-shadow: 0 0 0.625rem 0 rgba(0,0,0, .15);
+line-height: 150%;
+transition: opacity .5s;
+opacity: 0;
+}
+.cookie-popup--short {
+right: none;
+width: 21.875rem; 
+}
+.cookie-popup--dark {
+background: #000;
+color: #fff;
+}
+.cookie-popup--not-accepted {
+opacity: 1;
+animation: cookie-popup-in .5s ease forwards;  
+}
+.cookie-popup--accepted {
+opacity: 0;
+}
+.cookie-popup a {
+color: skyblue;
+}
+.cookie-popup {
+color: skyblue;
+text-decoration: none;
+}
+.cookie-popup-actions {
+flex: 1;
+text-align: right;
+}
+.cookie-popup-actions button {
+color: orange;
+border: none;
+background: none;
+font-family: inherit;
+font-style: inherit;
+font-size: inherit;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 	0.75rem;
+padding: 0;
+cursor: pointer;
+}
+.cookie-popup-actions button:hover {
+text-decoration: underline;
+}
+
+@keyframes cookie-popup-in {
+from { bottom: -6.25rem; }
+to { bottom: 1.25rem; }
+}
+/*
+Navbar
+*/
+.vh {
+border: 0;
+clip: rect(0 0 0 0);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+}
+.fade-screen {
+background: rgba(0, 0, 0, 0.2);
+visibility: hidden;
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+}
+@keyframes specialFadeIn {
+from {
+  opacity: 0;
+  transform: scale(0.8);
+}
+to {
+  opacity: 1;
+}
+}
+.specialFadeIn {
+animation-name: specialFadeIn;
+}
+@keyframes specialFadeOut {
+from {
+  opacity: 1;
+}
+to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+}
+.specialFadeOut {
+animation-name: specialFadeOut;
+}
+@keyframes specialSlideInRight {
+from {
+  transform: translate3d(10%, 0, 0);
+  visibility: visible;
+}
+to {
+  transform: translate3d(0, 0, 0);
+}
+}
+.specialSlideInRight {
+animation-name: specialSlideInRight;
+}
+@keyframes specialFadeInRight {
+from {
+  opacity: 0;
+  transform: translate3d(10%, 0, 0);
+}
+to {
+  opacity: 1;
+  transform: none;
+}
+}
+.spceialFadeInRight {
+animation-name: specialFadeInRight;
+}
+.menu-search-container.active {
+display: block;
+animation-name: specialFadeOut;
+transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.visible {
+visibility: visible;
+}
+.hidden {
+display: none;
+transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.menu ul li {
+transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.menu-mac.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 30ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-mac.hidden {
+animation-name: specialFadeOut;
+animation-delay: 245ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-iPad.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 70ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-iPad.hidden {
+animation-name: specialFadeOut;
+animation-delay: 210ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-iPhone.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 100ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-iPhone.hidden {
+animation-name: specialFadeOut;
+animation-delay: 170ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-watch.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 130ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-watch.hidden {
+animation-name: specialFadeOut;
+animation-delay: 130ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-tv.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 170ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-tv.hidden {
+animation-name: specialFadeOut;
+animation-delay: 100ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-support.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 210ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-support.hidden {
+animation-name: specialFadeOut;
+animation-delay: 70ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-search.is-closed {
+animation-name: specialFadeIn;
+animation-delay: 245ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-search.hidden {
+animation-name: specialFadeOut;
+animation-delay: 30ms;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-store.is-closed {
+animation-name: specialFadeIn;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-store.hidden {
+animation-name: specialFadeOut;
+animation-duration: 400ms;
+animation-fill-mode: both;
+}
+.menu-search-input {
+animation-name: specialFadeInRight;
+animation-duration: 400ms;
+animation-fill-mode: both;
+animation-delay: 350ms;
+}
+.search-sub-menu h3 {
+animation-name: specialFadeInRight;
+animation-duration: 700ms;
+animation-fill-mode: both;
+}
+.search-sub-menu ul li {
+animation-name: specialFadeInRight;
+animation-duration: 500ms;
+animation-fill-mode: both;
+}
+.search-sub-menu ul li:nth-child(1) {
+animation-delay: 0ms;
+}
+.search-sub-menu ul li:nth-child(2) {
+animation-delay: 30ms;
+}
+.search-sub-menu ul li:nth-child(3) {
+animation-delay: 50ms;
+}
+.search-sub-menu ul li:nth-child(4) {
+animation-delay: 70ms;
+}
+.search-sub-menu ul li:nth-child(5) {
+animation-delay: 90ms;
+}
+nav {
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+height: 48px;
+min-width: 1024px;
+background: rgba(0, 0, 0, 0.8);
+font-size: 18px;
+z-index: 2;
+}
+.menu-container {
+position: relative;
+margin: 0 auto;
+margin-top: -5px;
+max-width: 980px;
+padding: 0 22px;
+}
+.menu-container ul {
+list-style: none;
+}
+.menu-container ul li {
+display: inline-block;
+text-align: center;
+width: auto;
+margin-right: 76px;
+}
+.menu-container ul li:last-child {
+margin-right: 0;
+}
+.menu-container ul li a {
+display: inline-block;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+text-decoration: none;
+color: #fff;
+font-weight: 100;
+font-size: 16px;
+float: left;
+}
+.menu-container ul li a:hover {
+color: #969696;
+}
+.menu-container.menu-apple {
+background-repeat: no-repeat;
+width: 20px;
+}
+.apple-icon {
+font-size: 20px;
+}
+.menu-search-container {
+display: none;
+position: absolute;
+top: 0;
+left: 20.6667%;
+width: 56.66667%;
+z-index: 2;
+}
+.menu-search-container input {
+background-color: transparent;
+border: none;
+width: 80%;
+font-size: 16px;
+outline: none;
+color: #fff;
+}
+.menu-search-container a {
+color: #fff;
+}
+.menu-search-container a:first-child {
+display: block;
+float: left;
+padding-right: 10px;
+}
+.menu-search-container.active {
+display: block;
+}
+.menu-search-close {
+position: absolute;
+right: -183px;
+top: 0;
+}
+.search-sub-menu {
+background: #fff;
+width: 100%;
+margin-top: 14px;
+color: #999;
+font-weight: 100;
+padding: 24px 0 15px;
+z-index: 1;
+}
+.search-sub-menu h3 {
+font-size: 12px;
+font-weight: 100;
+margin-top: 0;
+padding-left: 28px;
+}
+.search-sub-menu ul {
+margin: 0;
+padding: 0;
+width: 100%;
+}
+.search-sub-menu ul li {
+display: block;
+text-align: left;
+padding-bottom: 10px;
+margin: 0;
+text-indent: 50px;
+}
+.search-sub-menu ul li a {
+font-size: 14px;
+color: #999;
+width: 100%;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.search-sub-menu ul li a:hover {
+background-color: #f2f2f2;
+color: #3392de;
+}
+.search-sub-menu ul li a:first-child {
+float: none;
+padding-right: 0;
+}
+
+/*box*/
+.box{
+  width: 140px;
+  padding: 2px;
+  border: 3px solid gray;
+  margin: 0;
+  border-radius: 15px;
+  text-align: center;
+  float: right;
+
+}
+
+/*
+  Build Dark Mode
+*/
+
+.dark-mode {
+  background-color: rgb(32, 32, 32);
+  color: white;
+}
+/*Dark Nav*/
+.navbar-dark {
+  border: 0;
+  z-index: 9999;
+  letter-spacing: 4px;
+  position: fixed;
+}
+.logo {
+  display: block;
+  height: auto;
+  width: 52px;
+  padding-top: 5px;
+  margin-right: 15px;
+  position: fixed;
+}
+
+.navbar-brand>img {
+height: 100%;
+padding: 15px; /* firefox bug fix */
+width: auto;
+position: fixed;
+}
+.navbar .nav > {
+line-height: 50px;
+float: left;
+}
+li > a {
+  line-height: 50px;
+}
+
+.navbar-header h1 {
+  letter-spacing: 1px;
+  color: black !important;
+  font-family: 'Roboto-Black', cursive;
+  position: fixed;
+  color: rgb(56, 56, 56);
+}
+
+.navbar li a, .navbar {
+  color: black !important;
+  font-size: 12px;
+  transition: all 0.6s 0s;
+  position: fixed;
+}
+
+.navbar-toggle {
+  background-color: transparent !important;
+  border: 0;
+  position: fixed;
+}
+
+.navbar-nav li  .navbar-nav li.active a {
+  color: red !important;
+
+}
+.box{
+  width: 140px;
+  padding: 2px;
+  border: 3px solid gray;
+  margin: 0;
+  border-radius: 15px;
+  text-align: center;
+  float: right;
+
+}
+/*Build Settings Icon*/
+/*Build Slider Button*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Build Footer */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer-section {
+background: #151414;
+position: relative;
+}
+.footer-cta {
+border-bottom: 1px solid #373636;
+}
+.single-cta i {
+color: #ff5e14;
+font-size: 30px;
+float: left;
+margin-top: 8px;
+}
+.cta-text {
+padding-left: 15px;
+display: inline-block;
+}
+.cta-text h4 {
+color: #fff;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 2px;
+}
+.cta-text span {
+color: #757575;
+font-size: 15px;
+}
+.footer-content {
+position: relative;
+z-index: 2;
+}
+.footer-pattern img {
+position: absolute;
+top: 0;
+left: 0;
+height: 330px;
+background-size: cover;
+background-position: 100% 100%;
+}
+.footer-logo {
+margin-bottom: 30px;
+}
+.footer-logo img {
+  max-width: 200px;
+}
+.footer-text p {
+margin-bottom: 14px;
+font-size: 14px;
+    color: #7e7e7e;
+line-height: 28px;
+}
+.footer-social-icon span {
+color: #fff;
+display: block;
+font-size: 20px;
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+margin-bottom: 20px;
+}
+.footer-social-icon a {
+color: #fff;
+font-size: 16px;
+margin-right: 15px;
+}
+.footer-social-icon i {
+height: 40px;
+width: 40px;
+text-align: center;
+line-height: 38px;
+border-radius: 50%;
+}
+.facebook-bg{
+background: #3B5998;
+}
+.twitter-bg{
+background: #55ACEE;
+}
+.google-bg{
+background: #DD4B39;
+}
+.footer-widget-heading h3 {
+color: #fff;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 40px;
+position: relative;
+}
+.footer-widget-heading h3::before {
+content: "";
+position: absolute;
+left: 0;
+bottom: -15px;
+height: 2px;
+width: 50px;
+background: #ff5e14;
+}
+.footer-widget ul li {
+display: inline-block;
+float: left;
+width: 50%;
+margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+color: #ff5e14;
+}
+.footer-widget ul li a {
+color: #878787;
+text-transform: capitalize;
+}
+.subscribe-form {
+position: relative;
+overflow: hidden;
+}
+.subscribe-form input {
+width: 100%;
+padding: 14px 28px;
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+color: #fff;
+}
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #ff5e14;
+  padding: 13px 20px;
+  border: 1px solid #ff5e14;
+  top: 0;
+}
+.subscribe-form button i {
+color: #fff;
+font-size: 22px;
+transform: rotate(-6deg);
+}
+.copyright-area{
+background: #202020;
+padding: 25px 0;
+}
+.copyright-text p {
+margin: 0;
+font-size: 14px;
+color: #878787;
+}
+.copyright-text p a{
+color: #ff5e14;
+}
+.footer-menu li {
+display: inline-block;
+margin-left: 20px;
+}
+.footer-menu li:hover a{
+color: #ff5e14;
+}
+.footer-menu li a {
+font-size: 14px;
+color: #878787;
+}
+ins{color:#777;text-decoration:none}
+.mainpt{
+border-radius: 50%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+image-resolution: 1920 1080;
+font-size: 80px;
+}
+.mainint{
+text-align: center;
+}
+.mainint i{
+font-size: 70px;
+}
+.mainint p{
+font-size: 30px;
+}
+button{
+font-family: Apple;
+}
+
+
+
+
+/*
+  Line 1000!
+*/
+.mainbox1{
+width: 320px;
+  padding: 10px;
+  border: .001px solid gray;
+  margin: 0;
+  float: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+.colorblack{
+background-color: rgb(56, 53, 53);
+color: white;
+width: 500px;
+float: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 20px;
+}
+.colorblack > h2{
+text-align:center;
+}
+.maintx{
+border-radius: 50%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+image-resolution: 1920 1080;
+font-size: 80px;
+}
+.mainbox{
+width: 320px;
+padding: 10px;
+border: 3px rgb(255, 255, 255);
+margin: 0;
+float: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 15px;
+}
+.split {
+height: 100%;
+width: 50%;
+position: fixed;
+z-index: 1;
+top: 0;
+overflow-x: hidden;
+padding-top: 20px;
+}
+/* Control the left side */
+
+/* Control the right side */
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
+a:link{
+color: rgb(0, 195, 255);
+}
+/*Build Dark Mode Button*/
+.switch {
+position: relative;
+display: inline-block;
+width: 90px;
+height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ca2222;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2ab934;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(55px);
+-ms-transform: translateX(55px);
+transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.on
+{
+display: none;
+}
+
+.on, .off
+{
+color: white;
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+font-size: 10px;
+font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;}
+a:hover{
+color:purple;
+}
+a:visited{
+color: black;
+}.colorwhite{
+background-color: #fff;
+color: rgb(0, 0, 0);
+width: 500px;
+float: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+text-emphasis-color: #000000;
+}
+* {
+box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+float: left;
+width: 25%;
+padding: 0 5px;
+}
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+.column {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+}
+
+/* Style the counter cards */
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 16px;
+text-align: center;
+background-color: #444;
+color: white;
+}
+
+.fa {font-size:50px;}
+.grey{
+background-color: #000000;
+}
+.bigbox{
+    width: 100%;
+    padding: 10px;
+    border: 3px solid gray;
+    margin: 0;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+}
+.mainboxa{
+width: 320px;
+  padding: 10px;
+  border: .001px solid gray;
+  margin: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  display: inline-block 
+}
+.block {
+display: inline-block;
+width: 200px;
+height: 200px;
+background-color:transparent;
+border-color: gray;
+border: 1px gray;
+}
+.container  {
+text-align: center;
+}
+.right{
+text-align: right;
+float: right;
+}
+.left{
+text-align: left;
+float: right;
+position: left;
+}
+svg {
+display: inline-block;
+position: absolute;
+top: 0;
+left: 0;
+}
+.container2 {
+display: inline-block;
+position: relative;
+width: 100%;
+padding-bottom: 100%;
+vertical-align: middle;
+overflow: hidden;
+}
+.sec2{
+text-align: center;
+position: center;
+}
+.vl {
+border-left: 6px solid white;
+height: 500px;
+}
+::selection{
+background-color: #0086df63;
+color: white;
+}
+.whitel > a:link{
+color: white;
+}
+
+
+#parent {
+  display: flex;
+  justify-content: space-around;
+}
+
+#left {
+  border: 1px solid gray;
+  background-color: gray;
+  width: 300px;
+}
+
+#right {
+  border: 1px solid gray;
+  background-color: gray;
+  width: 300px;
+}
+#middle {
+  border: 1px solid gray;
+  width: 420px
+}

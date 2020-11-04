@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Baloo;
+    src: url(../../assets/fonts/Main/BalooTammudu2-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Quick;
+    src: url(../../assets/fonts/Roboto/Roboto-Regular.ttf)
+}
+h1,h2,h3,h4,h5{
+    font-family: Quick;
+    color: #ffff;
+}
+p {
+    font-family: Quick;
+    color: #ffff;
+}
+.center{
+    text-align: center;
+    float: inherit;
+}
+.box {
+    width: 1080px;
+    padding: 10px;
+    border: .009px solid gray;
+    margin: 0;
+    border-radius: 20px;
+    float: left;
+  }
+a {
+    color: #ffff;
+}
+body {
+    background-color: #2C2F33;
+}
+hr {
+    color: rgba(255, 255, 255, 0.534);
+    border-radius: 20px;
+}
+.sides {
+    float: right;
+    text-align: center;
+}
+.side-box {
+    width: 300px;
+    padding: 10px;
+    border: .009px solid gray;
+    margin: 0;
+    border-radius: 10px;
+  }
+.comment-box {
+    width: 530px;
+    padding: 1px;
+    border: .009px solid gray;
+    margin: 0;
+    float: left;
+  }
+form {
+    background-color: #2C2F33;
+}
+img {
+    border-radius: 50%;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    font-family: quick;
+    color: #fff;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-family: quick;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .article-author {
+    margin-bottom: 10px;
+}
+.article-avatar {
+    margin-right: 10px;
+}
+.article-meta {
+    display: inline-block;
+    vertical-align: middle;
+}
+.meta-group {
+    display: block;
+}
+.meta-data {
+    color: #757575;
+    font-size: 13px;
+    font-weight: 300;
+}
+ul {
+    font-family: quick;
+    color: #fff;
+}
+li {
+    font-family: quick;
+    color: #fff;
+}

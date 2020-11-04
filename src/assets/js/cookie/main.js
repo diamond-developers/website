@@ -1,0 +1,1 @@
+document.cookie('_ot=true; expires= Thu, 1 Jan 2021 01:00:00 UTC; path=/')
